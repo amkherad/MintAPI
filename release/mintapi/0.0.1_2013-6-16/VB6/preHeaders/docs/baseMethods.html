@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta name="keywords" content="base exception exceptions baseexceptions baseexception except exceptioning throw notimplemented"/>
+<link rel="stylesheet" type="text/css" href="modules/master.css"/>
+<script type="text/javascript" language="javascript" src="modules/master.js"></script>
+<title>@t Framework - baseMethods</title>
+</head>
+<body>
+<div id="header">
+	<iframe src="modules/header.html" class="header" border="0" style="width:100%;height:70px;border:none;"></iframe>
+</div>
+<div id="header_caption">
+<h1>baseMethods</h1>
+<h2>Base constructing methods.</h2>
+</div>
+<div id="centralpane">
+<div id="contentpane">
+<p>
+	<h3>@t baseMethods</h3>
+	<h4 style="margin-left:20px;">Using Module Exceptions</h4>
+</p>
+	<br />
+	<br />
+	<ul class="clsmethods">
+		<li><span class="syntax">void<span> Initialize()</li>
+		<li><span class="syntax">void<span> Dispose(<span class="syntax">Optional ByVal<span> Force <span class="syntax">As Boolean<span> = <span class="syntax">False<span>)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">Int32<span> ArraySize(targetArray)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">bool<span> IsArrayEmpty(targetArray)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">void<span> EmptyArray(targetArray)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">bool<span> IsEmptyVariable(targetVariable)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">LPSTR<span> GetLPSTR(LPSTR <span class="syntax">As LPSTR<span>)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">bool<span> equalTo(Flags <span class="syntax">As<span> equalToFlags, EnumerateValue, <span class="syntax">ParamArray<span> args() <span class="syntax">As Variant<span>)</li>
+		<li class="bgimpmet"><span class="syntax">Int32<span> GetVersion()</li>
+		<li><span class="syntax">LPSTR<span> CurrentUser()</li>
+		<li><span class="syntax">LPSTR<span> GetTempPath()</li>
+		<li><span class="syntax">LPSTR<span> GetSystemPath()</li>
+		<li><span class="syntax">LPSTR<span> GetWindowsPath()</li>
+		<li><span class="syntax">LPSTR<span> GetUserPath()</li>
+		<li><span class="syntax">LPSTR<span> GetDesktopPath()</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span>[] EnumDirectoryFiles(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		<li class="bgimpmet"><span class="syntax">Int32<span> CountDirectoryFiles(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span>[] EnumDirectoryFolders(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		<li class="bgimpmet"><span class="syntax">Int32<span> CountDirectoryFolders(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span>[] EnumSubDirectoriesFiles(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		<li class="bgimpmet"><span class="syntax">Int32<span> CountSubDirectoriesFiles(Path <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Attributes <span class="syntax">As<span> VbFileAttribute = 0)</li>
+		
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> GetFilePath(<span class="syntax">ByVal<span> Path <span class="syntax">As LPSTR<span>)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> GetFileName(<span class="syntax">ByVal<span> Path <span class="syntax">As LPSTR<span>)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> GetFileExtention(<span class="syntax">ByVal<span> Path <span class="syntax">As LPSTR<span>)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> GetFileNameOnly(<span class="syntax">ByVal<span> Path <span class="syntax">As LPSTR<span>)</li>
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">LPSTR<span> ConcatPath(<span class="syntax">ByVal<span> Path, <span class="syntax">ByVal<span> PathToAdd, <span class="syntax">Optional<span> EndWithSlash <span class="syntax">As<span> ConcatPathEndMode = ConcatPathEndMode.cpeNotMatter, <span class="syntax">Optional<span> Slash <span class="syntax">As LPSTR<span> = "\")</li>
+		
+		<li class="bgimpmet"><span class="syntax">byte<span>[] StringToByteArray(str <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Length <span class="syntax">As Long<span> = -1)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> ByteArrayToString(B() <span class="syntax">As Byte<span>, <span class="syntax">Optional<span> Length <span class="syntax">As Long<span> = -1)</li>
+		<li class="bgimpmet"><span class="syntax">byte<span>[] LongToByteArray(lngNum <span class="syntax">As Long<span>)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> ByteArrayToLong(B() <span class="syntax">As Byte<span>)</li>
+		<li class="bgimpmet"><span class="syntax">byte<span>[] IntegerToByteArray(intNum <span class="syntax">As Integer<span>)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> ByteArrayToInteger(B() <span class="syntax">As Byte<span>)</li>
+		<li class="bgimpmet"><span class="syntax">byte<span>[] DateToByteArray(dateNum <span class="syntax">As Date<span>)</li>
+		<li class="bgimpmet"><span class="syntax">Date<span> ByteArrayToDate(B() <span class="syntax">As Byte<span>)</li>
+		<li class="bgimpmet"><span class="syntax">byte<span>[] DoubleToByteArray(doubleNum <span class="syntax">As Double<span>)</li>
+		<li class="bgimpmet"><span class="syntax">Double<span> ByteArrayToDouble(B() <span class="syntax">As Byte<span>)</li>
+		<li class="bgimpmet"><span class="syntax">void<span> ByteArrayToArgs(B() <span class="syntax">As Byte<span>, args() <span class="syntax">As Variant<span>)</li>
+		<li class="bgimpmet"><span class="syntax">byte<span>[] ArgsToByteArray(args() <span class="syntax">As Variant<span>)</li>
+		<li class="bgimpmet"><span class="syntax">void<span> InsertArrayIndex(targetArray, Index, Item)</li>
+		<li class="bgimpmet"><span class="syntax">void<span> AppendToArray(sourceArray, Item)</li>
+		<li class="bgimpmet"><span class="syntax">void<span> AppendArrayToArray(sourceArray, targetArray)</li>
+		<li><span class="syntax">LPSTR<span> ExpandVArrayToString(targetArray, <span class="syntax">Optional<span> throwExceptionOnUnknownValues <span class="syntax">As Boolean<span> = <span class="syntax">True<span>)</li>
+		<li><span class="syntax">bool<span> BinaryCompare(a1, a2, <span class="syntax">Optional<span> LengthToCompare <span class="syntax">As Long<span> = -1)</li>
+		<li class="bgimpmet"><span class="syntax">bool<span> ArrayCompare(a1, a2, <span class="syntax">Optional<span> LengthToCompare <span class="syntax">As Long<span> = -1)</li>
+		<li class="bgimpmet"><span class="syntax">LPSTR<span> RepeatString(str <span class="syntax">As LPSTR<span>, Count <span class="syntax">As Long<span>, <span class="syntax">Optional<span> Splitter <span class="syntax">As LPSTR<span> = "")</li>
+		<li
+class="clsmethods_last">
+			Last
+Update
+10/23/2012
+		</li>
+</p>
+</div>
+</div>
+<div
+id="footer_controls">
+	
+</div>
+<div
+id="footer">
+	Copyright
+(c)
+by
+Ali
+Mousavi
+Kherad
+|
+@t
+framework
+	<a
+href="mailto:alimousavikherad@gmail.com"
+id="footer_email">alimousavikherad@gmail.com</a>
+</div>
+</body>
+</html>

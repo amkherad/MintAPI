@@ -1,0 +1,9 @@
+Compile All Sub-Projects Using MAKEFILE
+---------------------------------------
+Just start the MAKEFILE.bat in /MintAPI/ and wait to VB6 compiler to finish the
+ compilation process.
+ 
+Compile And Export The Entire Project And Make It For Publish
+-------------------------------------------------------------
+Just start the export.exe in project root directory.
+ available commands:  /zip, /scheme , 

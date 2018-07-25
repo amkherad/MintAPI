@@ -1,0 +1,14 @@
+corelib: [only one]
+{[0000]0000-7700-0045-7FFF-7ACDC6661234}
+
+interfaces:
+[0000]0000-7710-0045-7FFF-7ACDC6661234
+
+structures:
+[0000]0000-7720-0045-7FFF-7ACDC6661234
+
+classes:
+[0000]0000-7750-0045-7FFF-7ACDC6661234
+
+derived:
+[same as derived class]XXWW-7750-0045-7FFF-7ACDC6661234 : XX: is imcreamental for derived index., WW: inherited level.

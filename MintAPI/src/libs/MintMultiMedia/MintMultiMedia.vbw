@@ -1,0 +1,17 @@
+MintMMAPI = 22, 22, 509, 464, C
+NoteBuffer = 44, 44, 531, 486, C
+modMain = 66, 66, 553, 508, C
+MIDIOutput = 88, 88, 575, 530, C
+MIDIInput = 110, 110, 597, 552, C
+MCIPlayer = 20, 14, 641, 456, C
+MCIPlayerMedia = 88, 88, 709, 530, C
+modConstants = 110, 110, 731, 552, C
+modMCI = 35, 78, 656, 520, C
+IMedia = 44, 44, 662, 486, C
+MediaGenericAttributes = 44, 44, 662, 486, C
+Constructors = 66, 66, 684, 508, C
+modConstructor = 88, 88, 706, 530, C
+modStatics = 110, 110, 728, 552, C
+MCI = 96, 72, 620, 512, C
+MCIDevices = 176, 176, 700, 616, C
+MCIDevice = 0, 0, 524, 440, C

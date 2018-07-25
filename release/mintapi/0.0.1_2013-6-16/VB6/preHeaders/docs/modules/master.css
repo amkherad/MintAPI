@@ -1,0 +1,47 @@
+/*
+	by Ali Mousavi Kherad | alimousavikherad@gmail.com
+	
+	'@PROJECT_LICENSE
+	
+	Courier New
+*/
+
+*{margin:0px;font-family:Consolas;font-size:14px;color:#333;}
+body{margin:0px;background-color:#FFFFD0;font-family:Consolas;font-size:14px;color:#333;}
+h1{font-family:Consolas;font-size:20px;color:#555;text-decoration:none;}
+h2{font-family:Consolas;font-size:15px;color:#999;text-decoration:none;}
+h3{font-family:Consolas;font-size:15px;color:#999;text-decoration:none;}
+h4{}
+h5{}
+h6{}
+
+a , a:visited{font-family:Consolas;font-size:14px;color:#194954;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#header{width:auto;height:70px;background-color:#014D58;border-bottom:2px solid #444;}
+#header_caption{width:auto;background-color:#B7C6CC;padding:10px 80px 10px 80px;border-bottom:1px solid #aaa;}
+#header_caption h1{font-family:Consolas;font-size:20px;color:#555;text-decoration:none;line-height:50px;}
+#header_caption h2{font-family:Consolas;font-size:15px;color:#fff;text-decoration:none;padding-left:40px;}
+
+#centralpane{background-color:#fff;padding:50px 0px 50px 0px;}
+#contentpane{background-color:#eee;margin:0px 80px 0px 80px;border:1px solid #aaa;padding:30px;}
+
+#footer_controls{width:auto;background-color:#014D58;padding:10px 80px 10px 80px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;}
+#footer{width:auto;font-family:Courier New;padding:30px 80px 30px 80px;}
+	#footer_email{float:right;}
+	
+.attrtext{color:orange;}
+.proptext{color:green;}
+.atcls{}
+.tagmet{color:red;}
+.impmet{color:red;}
+.highlightdescription{color:#ff6666;}
+.highlightdescription2{color:#aaaa44;}
+.highlightdescription3{color:#6666ff;}
+.clsmethods{background-color:#eee;padding:1;border:1px solid #ddd;list-style:none;}
+.clsmethods li{background-color:#fff;padding:0px 10px 0px 10px;border-bottom:1px solid #ddd;line-height:30px;}
+.clsmethods li:hover{background-color:#fafafa;}
+.clsmethods .bgimpmet{background-color:#FFF7EF;}
+.clsmethods .clsmethods_last{border-bottom:none;background-color:transparent;}
+.clsmethods .clsmethods_last:hover{background-color:transparent;}
+.syntax{color:blue;}

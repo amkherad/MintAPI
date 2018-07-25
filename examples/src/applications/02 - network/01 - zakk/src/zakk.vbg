@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=zakkServerExe\zakkServerExe.vbp
+Project=zakkServer\zakkServer.vbp
+Project=zakk\zakk.vbp

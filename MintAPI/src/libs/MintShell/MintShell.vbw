@@ -1,0 +1,9 @@
+frmMain = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+modMain = 0, 0, 0, 0, C
+CodeParser = 0, 0, 0, 0, C
+tApplication = 0, 0, 0, 0, C
+clsSocket = 110, 110, 710, 552, C
+clsFile = 0, 0, 0, 0, C
+EndPoint = 0, 0, 0, 0, C
+baseClass = 0, 0, 0, 0, C
+Variables = 0, 0, 0, 0, C

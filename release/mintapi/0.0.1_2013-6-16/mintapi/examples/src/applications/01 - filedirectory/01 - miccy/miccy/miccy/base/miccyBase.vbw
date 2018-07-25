@@ -1,0 +1,11 @@
+IPlugin = 125, 125, 983, 548, C
+Iwindow = 175, 175, 1033, 598, C
+Exceptions = 0, 0, 0, 0, C
+STDCONSTS = 150, 150, 1009, 573, C
+provider = 50, 50, 908, 473, C
+IFilter = 175, 175, 1033, 598, C
+Instance = 100, 100, 958, 523, C
+modMain = 150, 150, 1008, 573, C
+IAction = 200, 200, 1058, 623, C
+ActionBuffer = 50, 50, 909, 473, C
+IProccess = 125, 125, 984, 548, C

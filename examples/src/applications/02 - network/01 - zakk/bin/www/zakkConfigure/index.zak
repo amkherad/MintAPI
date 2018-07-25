@@ -1,0 +1,23 @@
+﻿@zakk:preLoad{
+	binaries={"bin:zakk.zak","bin:zakk.dll"};
+	class="default";
+	class.zakk="default";
+}
+@zakk:Load{
+	stream << "<!doctype xmlns=\"http://w3c.org/\">";
+}
+<html>
+<head>
+	<title>zakk-Sample</title>
+	<@zakk checkSystem="true" checkBrowser="true" targetBrowsers="IE>6, chrome, mozilla, safari, opera"/>
+</head>
+<body>
+	@zakk[AJAX]:document.Load{ //this mean create an ajax area and when page.load event occured execute this section.
+		int32 i = 0;
+		stream.messagebox << "Hello Every One..."; //alert('Hello Every One...');
+		stream.inputbox("") >> i; //this open an inputbox and get text.
+		stream << "Please Enter A Number..."; //alert('');
+		stream >> i; //means every button that clicked.
+	}
+</body>
+</html>

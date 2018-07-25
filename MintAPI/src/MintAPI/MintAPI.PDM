@@ -1,0 +1,200 @@
+[Root]
+Most Recent Package=MintAPI Setup Package
+
+
+[Package|Dep File 1|Root]
+SubWizProgID=PDWizard.DepPkgSubWiz
+BuildFolder=k:\MintAPI1
+
+[Package|Dep File 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Dep File 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Dep File 1|Files Found]
+
+[Package|Dep File 1|Files Released]
+DwmApi.dll=
+libkernel0.MintAPI.dll=
+mintapiwrapper.exe=
+shell.mintapi.exe=
+
+[Package|Dep File 1|Missing Dependency Information]
+F:\WINDOWS\system32\ws2_32.dll=
+F:\WINDOWS\system32\shlwapi.dll=
+F:\WINDOWS\system32\userenv.dll=
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\mintapiwrapper.exe=
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=
+F:\WINDOWS\system32\mintcore.dll=
+
+[Package|Dep File 1|Out-of-Date Dependency Information]
+
+[Package|Dep File 1|Files Added]
+
+[Package|Dep File 1|Files Removed]
+f:\windows\system32\shlwapi.dll=
+
+[Package|Dep File 1|Files In Project]
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=Yes
+F:\WINDOWS\system32\msvbvm60.dll=Yes
+F:\WINDOWS\system32\oleaut32.dll=Yes
+F:\WINDOWS\system32\olepro32.dll=Yes
+F:\WINDOWS\system32\asycfilt.dll=Yes
+F:\WINDOWS\system32\stdole2.tlb=Yes
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+F:\WINDOWS\system32\userenv.dll=Yes
+F:\WINDOWS\system32\shlwapi.dll=No
+F:\WINDOWS\system32\mintcore.dll=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=Yes
+
+[Package|Dep File 1|Configure Registry Files]
+Applicable=No
+
+[Package|Dep File 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Dep File 1|Install Locations]
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=$(AppPath)
+F:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+F:\WINDOWS\system32\userenv.dll=$(AppPath)
+F:\WINDOWS\system32\shlwapi.dll=$(WinSysPath)
+F:\WINDOWS\system32\ws2_32.dll=$(WinSysPath)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+F:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=$(AppPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\mintapiwrapper.exe=$(WinSysPath)
+F:\WINDOWS\system32\mintcore.dll=$(WinSysPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=$(WinSysPath)
+
+[Package|Dep File 1|Configure Shared Files]
+Applicable=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=Yes
+F:\WINDOWS\system32\userenv.dll=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=No
+
+[Package|Dep File 1|Distribution]
+Type=single
+Size=1.44 MB
+Title=MintAPI
+
+[Package|Dep File 1|DepFile]
+DepCabFile=mintapi0.CAB
+DepCabRun=mintapi0.INF
+
+[Package|Dep File 1|Package]
+PackageFolder=k:\MintAPI1
+ProjectFolder=G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\src\MintAPI
+ServerSideCab=
+File1=k:\MintAPI1\mintapi0.DEP
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|MintAPI Setup Package|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=k:\MintAPI1
+
+[Package|MintAPI Setup Package|Configure DAO ISAMs]
+Applicable=No
+
+[Package|MintAPI Setup Package|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|MintAPI Setup Package|Files Found]
+
+[Package|MintAPI Setup Package|Files Released]
+DwmApi.dll=
+libkernel0.MintAPI.dll=
+mintapiwrapper.exe=
+shell.mintapi.exe=
+
+[Package|MintAPI Setup Package|Missing Dependency Information]
+F:\WINDOWS\system32\ws2_32.dll=
+F:\WINDOWS\system32\shlwapi.dll=
+F:\WINDOWS\system32\userenv.dll=
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\mintapiwrapper.exe=
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=
+F:\WINDOWS\system32\mintcore.dll=
+
+[Package|MintAPI Setup Package|Out-of-Date Dependency Information]
+
+[Package|MintAPI Setup Package|Files Added]
+
+[Package|MintAPI Setup Package|Files Removed]
+f:\windows\system32\shlwapi.dll=
+
+[Package|MintAPI Setup Package|Files In Project]
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=Yes
+F:\WINDOWS\system32\msvbvm60.dll=Yes
+F:\WINDOWS\system32\oleaut32.dll=Yes
+F:\WINDOWS\system32\olepro32.dll=Yes
+F:\WINDOWS\system32\asycfilt.dll=Yes
+F:\WINDOWS\system32\stdole2.tlb=Yes
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+F:\WINDOWS\system32\userenv.dll=Yes
+F:\WINDOWS\system32\shlwapi.dll=No
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+F:\WINDOWS\system32\VB6STKIT.DLL=Yes
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+F:\WINDOWS\system32\mintcore.dll=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=Yes
+
+[Package|MintAPI Setup Package|Configure Registry Files]
+Applicable=No
+
+[Package|MintAPI Setup Package|Configure Remote Servers]
+Applicable=No
+
+[Package|MintAPI Setup Package|Install Locations]
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=$(AppPath)
+F:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+F:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+F:\WINDOWS\system32\userenv.dll=$(AppPath)
+F:\WINDOWS\system32\shlwapi.dll=$(WinSysPath)
+F:\WINDOWS\system32\ws2_32.dll=$(WinSysPath)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+F:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+F:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=$(AppPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\mintapiwrapper.exe=$(WinSysPath)
+F:\WINDOWS\system32\mintcore.dll=$(WinSysPath)
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintcore.tlb=$(WinSysPath)
+
+[Package|MintAPI Setup Package|Configure Shared Files]
+Applicable=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\bin\mintapi0.dll=Yes
+F:\WINDOWS\system32\userenv.dll=Yes
+G:\Projects\Applications\Desktop\projects\MintAPI\release\mintapi\0.0.1\bin\shell.mintapi.exe=No
+
+[Package|MintAPI Setup Package|Distribution]
+Type=single
+Size=1.44 MB
+Title=MintAPI
+
+[Package|MintAPI Setup Package|Package]
+PackageFolder=k:\MintAPI1
+ProjectFolder=G:\Projects\Applications\Desktop\projects\MintAPI\MintAPI\src\MintAPI
+ServerSideCab=
+File1=k:\MintAPI1\setup.exe
+File2=k:\MintAPI1\Setup.Lst
+File3=k:\MintAPI1\mintapi0.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

@@ -1,0 +1,176 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\lang1033\f0\fs20 [Enable word wrap to read properly]\par
+\par
+\b INTRODICTION\b0\par
+This class along with the modThreading module incorporates the methods for creation, execution and synchronisation of \par
+threads. All you need is to declare and initialize the thread class and you are all set to go. \par
+This file deals with the measures you need to take to use the class.\par
+\par
+\par
+\b DECLARATION\b0\par
+You should declare this class with events. Like\par
+\par
+\i "Private WithEvents MyThread as Thread"\i0\par
+\par
+\par
+\par
+\b ********************************************************MAIN METHODS******************************************************\par
+\b0\par
+\b STARTING THE THREAD\b0\par
+The thread can be started by the method \b StartWorkAsync\b0 .\par
+The StartWorkAsync method takes two parametres,\b  ThreadParent \b0 (Form) and \b lParam\b0 (Variant). The ThreadParent parametre is a Form, created thread will use this parametre to communicate with your main thread. The lParam is a variant that will be passed to your thread as a parametre. The lParam will be passed on to the DoWork Event of your thread.\par
+\par
+\i E.G.\par
+Private Sub Form1_Load()\par
+\tab Set MyThread = New Thread\par
+\tab MyThread.StartWorkAsync Me, CVar(100)\tab 'Me is Form1\par
+End Sub\par
+\i0\par
+\par
+\par
+\b PAUSING AND RESUMING THE THREAD\b0\par
+You can pause and resume your thread by calling the PauseWork and ResumeWork method of the associated object.\par
+\i E.G\par
+MyThread.PauseWork\tab 'Pauses the thread\par
+MyThread.ResumeWork\tab 'Resumes the thread\i0\par
+\par
+\par
+\b STOPPING THE THREAD\b0\par
+The thread doesn't exits until the DoWork Event Handler returns. Calling the CancelWork method of the associated object will set a flag signalling that the main thread requested the cancellation of the thread. HowEver it is completely up to you to stop your thread. After the CancelWork method is called, the CancellationPending property will return false. \par
+So you can use this method to stop the thread.\par
+\par
+\i While MyThread.CancellationPending\tab 'CancellationPending will return false after CancelWork is called.\par
+\tab 'Do your work\par
+Wend \par
+'Assign Result and return\par
+Result = CvAr(something)\par
+\i0\par
+\par
+\par
+\b ************************************************************EVENTS********************************************************\par
+\b0\par
+\b THE DoWork EVENT\par
+\b0 After you have called the StartWorkAsync method, your thread will be created. The Thread\par
+does some starting work and the it raises the DoWork Event. This is the procedure where you will be doing work with your thread. This Event is called from the created thread. The Event is defined as.\par
+\par
+\i Public Event DoWork (Byval Arg as Variant, Result as Variant)\par
+\i0\par
+The Arg is the same argument that you passed while calling the StartWorkAsync method. Note that the Result is a variant which is declared \b ByRef\b0 . You can use the Result to pass result of your operation to the main thread via WorkCompleted Event.\par
+\par
+\i E.G.\par
+Private Sub MyThread_DoWork(Byval Arg as Variant, Result as Variant)\par
+\tab Dim Filename as String\par
+\par
+\tab FileName = CStr(Arg)\par
+\tab\par
+\tab while MyThread.CancellationPending\tab\tab 'Until Main Thread calls the CancelWork Method\par
+\tab\par
+\tab 'Some calculations here\par
+\tab ...................\tab\par
+\tab ................\par
+\tab MyThread.ReportProgress Progress\tab\tab 'Notify the main thread of the progresses\par
+\tab\par
+\tab Wend\par
+'Finally\par
+Result = Cvar(Res)\tab 'Assign the result of your operation(Res is the result)\par
+End Sub\par
+\par
+\i0\par
+\par
+\b THE ProgressChanged EVENT\par
+\b0 The ProgressChanged event is raised when the thread associated with the object calls the ReportProgress method.\par
+It is called from the main thread. The Created thread waits for the ProgressChanged event handler to return if the ReportProgress method is called with ReportAsync parametre false. It is defined as.\par
+\par
+\i Public Event ProgressChanged(Byval ProgressPercent as long)\par
+\i0\par
+\i E.G.\par
+'The main thread accesses this module in response to the WM_PROGRESS message sent by the created thread.\par
+Private Sub MyThread_ProgressChanged(Byval ProgressPercent as long)\par
+\tab Me.Label1.Caption = "Doing Work..............." & vbCrlf & Str(ProgressPercent) & "% Completed"\par
+End Sub\par
+\i0\par
+\par
+\b THE WorkCompleted EVENT\par
+\b0 After the DoWork Event Handler returns, the created thread signals the main thread. And the main thread raises the WorkCompleted Event. It is defined as.\par
+\par
+\i Public Event WorkCompleted(Byval Result as Variant)\par
+E.G.\par
+Private Sub MyThread_WorkCompleted(Byval Result as Variant)\par
+\tab Select Case Clng(Result)\par
+\par
+\tab Case ERROR_SUCCESS\par
+\tab\tab Msgbox "Work completed SuccessFully", vbOkonly or vbInformation\par
+\tab Case Else\par
+\tab\tab Msgbox "Work Unsuccessfull.", vbOkOnly or vbCritical\tab\par
+\tab End Select\par
+End Sub\par
+\par
+\par
+\i0\par
+\b ********************************************************PROPERTIES*********************************************************\par
+PROPERTY Param\par
+\b0 This property returns the parametre passed during creation of thread.\par
+\par
+\b PROPERTY Handle\par
+\b0 This property returns the handle of the thread created.\par
+\par
+\b PROPERTY CancellationPending\par
+\b0 This property returns a value specifying whether cancellation is still pending or the main thread requested cancellation.\par
+\par
+\b PROPERTY WorkerStatus\par
+\b0 This property returns the status of the thread. It can be NONE, SUSPENDED, RUNNING or TERMINATED.\par
+\par
+Note:- All of these properties are meant to be readonly.\par
+\par
+\par
+\par
+\b ********************************************************SYNCHRONISATION**************************************************\par
+\b0 Multithreaded application requires synchronisation methods to prevent DeadLocks and Race Conditions. The Thread Class provides some methods to prevent these conditions (via Semaphores).\par
+\par
+AcquireLock METHOD\par
+This method is nothing but basically a call to WaitForSingleObject method. When this method is called, the calling thread\par
+will wait until the Semaphore is granted.\par
+\par
+ReleaseLock METHOD\par
+Similarly this method calls the ReleaseSemaphore Method. You must call this method after you've called the AcquireLock Method to increase the Semaphore count.\par
+\par
+TryAcquireLock METHOD\par
+This function checks to see whethere the Semaphore is free or not. And if the Semaphore is free then the calling thread acquires the Semaphore(or decreases its count). If it is not free, the function returns 0 or 1 otherwise.\par
+\par
+AssignSafely METHOD\par
+\i\par
+AssignSafely(ByRef LHS as variant, ByVal RHS as variant)\par
+\i0 This method assigns RHS to LHS safely, i.e. only one thread can write the LHS at a time.\par
+\par
+\par
+NOTE:- You should use the synchronisation methods if your thread is modifying a global variable. All threads of the process\par
+can use these methods. When you call these methods, the calling thread will acquire/release the lock. It is up to you to decide which thread are you currently calling the methods with. Also, you must first call the StartWorkAsync method of at least one thread object before calling the methods.\par
+\par
+\par
+\b ****************************************************SOME GOOD PRACTICES**************************************************\par
+\b0 While working with threads, you must remember that you must not run your program from inside the VB IDE. You must first compile your project and then run your application.\par
+\par
+You should not try to access the Forms or other controls, while it may be successfull but it is not recommended. Try to access these controls from the ProgressChanged event or the WorkCompleted event.\par
+\par
+Be careful while modifying global variables, use synchronisation methods provided or other methods like mutexes, events etc while doing so.\par
+\par
+Since VB6 programmers are not intended to use multiple threads, do extensive research on multithreading (if you don't know already) before using this class module.\par
+\par
+\b ****************************************************LIMITATIONS*********************************************************\b0\par
+The thread class is in no way complete. But some of the known limitations are\par
+\par
+You can't load any forms through created threads this makes it useless for splash screens\par
+\par
+You can't run/debug your programs through the IDE\par
+\par
+Originally I wanted to make it singlefile (without the modThreading.bas), but couldn't because of the AddressOf operators\par
+and static variables. (I don't know if VB has static variables for a class like they have in C++ or java.)\par
+\par
+and so on. If you resolve any of these limitations or have any suggestions, post it.\par
+\tab\tab\tab\tab\tab\tab\tab Well, that is all of it. I hope you find this program useful. \b Thanx!\par
+\b0\par
+\par
+\par
+  \par
+}
+ 

@@ -1,0 +1,19 @@
+MintAPI is a strong api provided 
+For atl - based apps such as VB6
+
+Programmer:   Ali Mousavi Kherad
+      alimousavikherad@gmail.com
+
+-Mail me if you have any idea or
+ Problem using MintAPI.
+
+-Many of MintAPI modules is free
+ To use but some little features
+ Anyway if you want to use free
+ Modules you must register your
+ Copy at #######################
+ To activate MintAPI , other way
+ You may recieve errors on some 
+ Parts execution and unregister
+ Form alway will be open on lib
+ Start.

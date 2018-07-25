@@ -1,0 +1,21 @@
+[application.addRefrence("lib-ext.dll", "default") ] //default is classname
+function @zak:preLoad{
+    @zak:stream::out(...) << "";
+    int x = 0;//int,int32,int64,int128,int...,intx
+    x.extended = 4324;
+    x.toInt16;
+    lreturn;
+    return;
+}
+
+//$.optimization:true;
+$<<{
+    <html>
+        <head>
+            <title>myProxy</title>
+        </head>
+        <body>
+            
+        </body>
+    </html>
+};

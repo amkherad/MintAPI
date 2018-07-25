@@ -1,0 +1,192 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "ThreadStatic"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Attribute VB_Ext_KEY = "SavedWithClassBuilder6" ,"Yes"
+Attribute VB_Ext_KEY = "Top_Level" ,"Yes"
+'@PROJECT_LICENSE
+
+''<class name="ThreadStatic" static tags="">
+''  <summary>
+''    Some class description.
+''  </summary>
+''  <using>Some class alias.</using>
+''  <idea>Me</idea>
+''  <sample></sample>
+''</class>
+
+Option Base 0
+Option Explicit
+
+'=============================================
+'=============================================
+'=============================================
+'<section Meta Data>
+'
+Const CLASSID As String = "ThreadStatic" '#DO NOT REMOVE IT
+Const CLASSALIAS As String = APPLICATIONDOMAIN & "." & CLASSID '#DO NOT REMOVE IT
+Const CLASSVERSIONSTRING As String = "0.1" '#DO NOT REMOVE IT
+Const CLASSALIASSTRING As String = CLASSALIAS & "/" & CLASSVERSIONSTRING '#DO NOT REMOVE IT
+
+'
+'</section>
+'---------------------------------------------
+'---------------------------------------------
+
+'=============================================
+'=============================================
+'=============================================
+'<section API/Type Declarations>
+'
+Private Declare Function API_GetCurrentThread Lib "kernel32" Alias "GetCurrentThread" () As Long
+Private Declare Function API_GetCurrentThreadId Lib "kernel32" Alias "GetCurrentThreadId" () As Long
+
+'
+'</section>
+'---------------------------------------------
+'---------------------------------------------
+
+'=============================================
+'=============================================
+'=============================================
+'<section Creators>
+'
+Public Function Create(ByVal Delegator As Method) As Thread
+    Dim Thread As New Thread
+    Call Thread.Constructor0(Delegator)
+    Set Create = Thread
+End Function
+Public Function FromHandle(ByVal Handle As Long) As Thread
+    Dim Thread As New Thread
+    Call Thread.Constructor1(Handle)
+    Set FromHandle = Thread
+End Function
+Public Function FromThreadID(ByVal ThreadID As Long) As Thread
+    Dim Thread As New Thread
+    Call Thread.Constructor2(ThreadID)
+    Set FromThreadID = Thread
+End Function
+'
+'</section>
+'---------------------------------------------
+'---------------------------------------------
+
+'=============================================
+'=============================================
+'=============================================
+'<section Class Public Body Members>
+'
+'*********************************************
+'*********************************************
+
+''<summary>Represents the current thread of the executing context.</summary>
+''<retval>Returns the current thread.</retval>
+Public Property Get Current() As Thread: Set Current = FromHandle(API_GetCurrentThread): End Property
+
+''<summary>Provides sleep for the current thread.</summary>
+''<remarks>The thread freezes if the Milliseconds argument set to infinite.</remarks>
+Public Sub Sleep(ByVal Milliseconds As Long): Call API_Sleep(Milliseconds): End Sub
+
+''<summary>
+''  The Yield function causes the calling thread
+''  to yield execution to another thread that is
+''  ready to run on the current processor.
+''  The operating system selects the thread to yield to.
+''</summary>
+Public Function Yield() As Boolean
+    Yield = CBool(API_SwitchToThread)
+End Function
+
+'Public Sub ResetAbort()
+'
+'End Sub
+
+''<summary>Starts the concurrent execution of the given delegate, the method must have no arguments and return void [Sub methodname()].</summary>
+''<remarks>The process may run into crash if the delegator's given method has arguments of return value.</remarks>
+Public Sub Start(ByVal Delegator As Method, ByVal Argument As Long)
+    Dim Thread As Thread
+    Set Thread = Create(Delegator)
+    
+    Call Thread.Start(Argument)
+End Sub
+
+Public Sub ExitThread(Optional ByVal ExitCode As Long = 0)
+    Dim hndl As Long
+    'hndl = API_GetExitCodeThread(Thread.Current.Handle, ExitCode)
+    Call API_ExitThread(hndl)
+End Sub
+
+''<summary>
+''  Reads the value of a field. The value is the latest written by any processor
+''  in a computer, regardless of the number of processors or the state of processor
+''  cache.
+''</summary>
+Public Function VolatileRead(ByRef Value As Variant) As Variant
+    
+End Function
+''<summary>
+''  Writes a value to a field immediately, so that the value is visible to all
+''  processors in the computer.
+''</summary>
+Public Function VolatileWrite(ByRef Value As Variant) As Variant
+    
+End Function
+
+''<summary>
+''  Notifies a host that execution is about to enter a region of code in which
+''  the effects of a thread abort or unhandled exception might jeopardize other
+''  tasks in the application domain.
+''</summary>
+Public Sub BeginCriticalRegion()
+    If API_EnterCriticalSection(0) <> NO_ERROR Then _
+        throw Exps.IfError
+End Sub
+''<summary>
+''  Notifies a host that execution is about to enter a region of code in which
+''  the effects of a thread abort or unhandled exception are limited to the current
+''  task.
+''</summary>
+Public Sub EndCriticalRegion()
+    If API_LeaveCriticalSection(0) <> NO_ERROR Then _
+        throw Exps.IfError
+End Sub
+
+''<summary>Enumerates all threads of the current process.</summary>
+''<retval>A vector of all threads in the current process.</retval>
+Public Function EnumThreads() As Vector
+    Set EnumThreads = Process.Current.Threads
+End Function
+
+Public Sub WaitForSingleThread(ByVal TargetThread As Thread, Optional Milliseconds As Long = C_INFINITE)
+    If TargetThread Is Nothing Then throw Exps.ArgumentNullException
+    Dim Handle As Long
+    Handle = TargetThread.ThreadID
+    If Handle = 0 Then throw Exps.InvalidArgumentValueException
+    Call API_WaitForSingleObject(Handle, Milliseconds)
+End Sub
+Public Sub WaitForSingleObject(ByVal ObjectHandle As Long, Optional Milliseconds As Long = C_INFINITE)
+'    If ObjectHandle = 0 Then throw Exps.InvalidArgumentValueException
+'    Call API_WaitForSingleObject(ObjectHandle, Milliseconds)
+End Sub
+Public Sub WaitForMultipleThread(TargetThread() As Thread, Optional Milliseconds As Long = C_INFINITE)
+    'API_WaitForMultipleObjects
+End Sub
+Public Sub WaitForMultipleObject(ObjectHandle() As Long, Optional Milliseconds As Long = C_INFINITE)
+    
+End Sub
+
+'*********************************************
+'*********************************************
+'
+'</section>
+'---------------------------------------------
+'---------------------------------------------

@@ -1,0 +1,17 @@
+MintAPI2ndLayerAPI = 21, 0, 655, 503, C
+frmLanguageEditor = 12, 40, 584, 505, , -242, 50, 528, 710, C
+modMain = 13, 82, 563, 618, 
+LanguageEditor = 47, 43, 561, 506, 
+frmConfigurationEditor = 199, 157, 866, 767, C, -204, 5, 649, 724, C
+ConfigurationEditor = 4, 7, 587, 548, C
+SourceCodeManager = 49, 72, 586, 509, 
+frmSourceCodeManager = 132, 125, 561, 536, C, 22, 22, 689, 632, C
+edt_Language_Modify = 225, 177, 892, 787, C, 234, 246, 901, 856, C
+baEditor = 217, 100, 884, 708, C, 128, 238, 795, 846, C
+ByteArrayTypedEditor = 264, 264, 931, 872, C, 143, 131, 810, 739, C
+ByteArrayEditor = 140, 99, 648, 553, C
+ctlByteArrayEditor = 198, 198, 862, 806, , 44, 44, 708, 652, C
+edt_Language_Settings = 286, 286, 952, 894, C, 22, 22, 686, 630, C
+frmControlLoader = 0, 0, 0, 0, C, -113, 55, 553, 663, C
+frmAbout = 242, 242, 908, 850, C, 2, 75, 477, 487, C
+edt_find_replace = 22, 22, 688, 630, C, 110, 110, 776, 718, C

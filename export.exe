@@ -1,0 +1,7 @@
+/path                   to set the exportation path.
+/zip                    to compress the project.
+/scheme                 to set the scheme of the exported directories.
+   -schdef              default directory scheme of the project.
+   -schlibs             export all sub projects in /MintAPI/src/libs/ directory.
+   -schsrc              export all projects in /MintAPI/src
+/lib                    

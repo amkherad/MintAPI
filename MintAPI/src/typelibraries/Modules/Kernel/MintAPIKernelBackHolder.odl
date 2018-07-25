@@ -1,0 +1,33 @@
+/* * * * * * * * * * * * * * * * * * * *
+ *
+ * MintAPIKernelBackHolder
+ *  by Ali Mousavi Kherad
+ *  alimousavikherad@gmail.com
+ * MintAPIKernelBackHolder
+ *
+ * * * * * * * * * * * * * * * * * * * */
+
+[
+    helpstring("# MintAPI Kernel Back Holder Type Library."),
+    uuid(00000000-7700-1145-7FFF-7ACDC6661234),
+	lcid(0x00000000),
+	version(0.1)
+]
+library MintKBH {
+    importlib("stdole2.tlb");
+    importlib("msvbvm60.dll");
+    importlib("../../bin/mintcore.tlb");
+    importlib("../../bin/mintcml.tlb");
+    
+#include "../../../_include.h"
+
+#include "generictypes.h"
+
+#include "enums.h"
+
+#include "structures.h"
+
+#include "interfaces.h"
+
+#include "_modules.h"
+}

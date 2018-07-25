@@ -1,0 +1,32 @@
+
+'Public Sub RefreshMemoryStatus(Optional RefreshInfo As Boolean = True)
+'    Static memInfo_IsEverRefreshed As Boolean
+'    If Not RefreshInfo Then _
+'        If memInfo_IsEverRefreshed Then Exit Sub
+'    Call API_GlobalMemoryStatus(lmemInfo)
+'    memInfo_IsEverRefreshed = True
+'End Sub
+'Public Function TotalMemorySize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    TotalMemorySize = CDbl(lmemInfo.TotalPhysMemory)
+'End Function
+'Public Function AvailableMemorySize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    AvailableMemorySize = CDbl(lmemInfo.AvailablePhysMemory)
+'End Function
+'Public Function UsedMemorySize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    UsedMemorySize = CDbl(lmemInfo.TotalPhysMemory) - CDbl(lmemInfo.AvailablePhysMemory)
+'End Function
+'Public Function TotalPageFileSize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    TotalPageFileSize = CDbl(lmemInfo.Length)
+'End Function
+'Public Function AvailablePageFileSize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    AvailablePageFileSize = CDbl(lmemInfo.AvailPageFile)
+'End Function
+'Public Function UsedPageFileSize(Optional RefreshInfo As Boolean = False) As Double
+'    Call RefreshMemoryStatus(RefreshInfo)
+'    UsedPageFileSize = CDbl(lmemInfo.TotalPageFile) - CDbl(lmemInfo.AvailPageFile)
+'End Function

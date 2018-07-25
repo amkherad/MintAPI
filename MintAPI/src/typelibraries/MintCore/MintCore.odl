@@ -1,0 +1,32 @@
+/* * * * * * * * * * * * * * * * * * * *
+ *
+ * MintCore
+ *  by Ali Mousavi Kherad
+ *  alimousavikherad@gmail.com
+ * MintCore.odl
+ *
+ * * * * * * * * * * * * * * * * * * * */
+
+
+[
+    helpstring("# MintAPI Core Type Library"),
+    uuid(00000000-7700-0145-7FFF-7ACDC6661234),
+	lcid(0x00000000),
+	version(0.1)
+]
+library MintCore {
+    importlib("stdole2.tlb");
+    importlib("msvbvm60.dll");
+    
+#include "../_include.h"
+    
+#include "generictypes.h"
+
+#include "enums.h"
+
+#include "structures.h"
+
+#include "interfaces.h"
+
+#include "_modules.h"
+}

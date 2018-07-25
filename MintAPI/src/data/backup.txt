@@ -1,0 +1,303 @@
+Public Function Strings(ParamArray Str() As Variant) As String()
+    Dim i As Long, strSize As Long, RetVal() As String
+    On Error GoTo zeroLength
+    strSize = UBound(Str) - LBound(Str) + 1
+zeroLength:
+    If strSize > 0 Then
+        'ReDim retVal(strSize - 1)
+        RetVal = Arrays.CreateSafeVector(atStringArray, strSize)
+        For i = 0 To strSize - 1
+            RetVal(i) = CStr(Str(i))
+        Next
+    End If
+    Strings = RetVal
+End Function
+Public Function Objects(ParamArray EnumerableObjects() As Variant) As Object()
+    Dim i As Long, objSize As Long, RetVal() As Object
+    On Error GoTo zeroLength
+    objSize = UBound(EnumerableObjects) - LBound(EnumerableObjects) + 1
+zeroLength:
+    If objSize > 0 Then
+        'ReDim retVal(objSize - 1)
+        RetVal = Arrays.CreateSafeVector(atObjectArray, objSize)
+        For i = 0 To objSize - 1
+            Set RetVal(i) = EnumerableObjects(i)
+        Next
+    End If
+    Objects = RetVal
+End Function
+Public Function Doubles(ParamArray EnumerableDoubles() As Variant) As Double()
+    Dim i As Long, dblSize As Long, RetVal() As Double
+    On Error GoTo zeroLength
+    dblSize = UBound(EnumerableDoubles) - LBound(EnumerableDoubles) + 1
+zeroLength:
+    If dblSize > 0 Then
+        'ReDim retVal(dblSize - 1)
+        RetVal = Arrays.CreateSafeVector(atDoubleArray, dblSize)
+        For i = 0 To dblSize - 1
+            RetVal(i) = CDbl(EnumerableDoubles(i))
+        Next
+    End If
+    Doubles = RetVal
+End Function
+Public Function Singles(ParamArray EnumerableSingles() As Variant) As Single()
+    Dim i As Long, sngSize As Long, RetVal() As Single
+    On Error GoTo zeroLength
+    sngSize = UBound(EnumerableSingles) - LBound(EnumerableSingles) + 1
+zeroLength:
+    If sngSize > 0 Then
+        'ReDim retVal(sngSize - 1)
+        RetVal = Arrays.CreateSafeVector(atSingleArray, sngSize)
+        For i = 0 To sngSize - 1
+            RetVal(i) = CSng(EnumerableSingles(i))
+        Next
+    End If
+    Singles = RetVal
+End Function
+Public Function Longs(ParamArray EnumerableLongs() As Variant) As Long()
+    Dim i As Long, lngSize As Long, RetVal() As Long
+    On Error GoTo zeroLength
+    lngSize = UBound(EnumerableLongs) - LBound(EnumerableLongs) + 1
+zeroLength:
+    If lngSize > 0 Then
+        'ReDim retVal(lngSize - 1)
+        RetVal = Arrays.CreateSafeVector(atLongArray, lngSize)
+        For i = 0 To lngSize - 1
+            RetVal(i) = CLng(EnumerableLongs(i))
+        Next
+    End If
+    Longs = RetVal
+End Function
+Public Function Integers(ParamArray Ints() As Variant) As Integer()
+    Dim i As Long, intSize As Long, RetVal() As Integer
+    On Error GoTo zeroLength
+    intSize = UBound(Ints) - LBound(Ints) + 1
+zeroLength:
+    If intSize > 0 Then
+        'ReDim retVal(intSize - 1)
+        RetVal = Arrays.CreateSafeVector(atIntegerArray, intSize)
+        For i = 0 To intSize - 1
+            RetVal(i) = CLng(Ints(i))
+        Next
+    End If
+    Integers = RetVal
+End Function
+Public Function Bytes(ParamArray EnumerableBytes() As Variant) As Byte()
+    Dim i As Long, btSize As Long, RetVal() As Byte
+    On Error GoTo zeroLength
+    btSize = UBound(EnumerableBytes) - LBound(EnumerableBytes) + 1
+zeroLength:
+    If btSize > 0 Then
+        'ReDim retVal(btSize - 1)
+        RetVal = Arrays.CreateSafeVector(atByteArray, btSize)
+        For i = 0 To btSize - 1
+            RetVal(i) = CByte(EnumerableBytes(i))
+        Next
+    End If
+    Bytes = RetVal
+End Function
+Public Function ByteArrays(ParamArray BAs() As Variant) As ByteArray()
+    Dim i As Long, baSize As Long, RetVal() As ByteArray
+    On Error GoTo zeroLength
+    baSize = UBound(BAs) - LBound(BAs) + 1
+zeroLength:
+    On Error GoTo 0
+    If baSize > 0 Then
+        'ReDim retVal(baSize - 1)
+        RetVal = Arrays.CreateSafeVector(atObjectArray, baSize)
+        For i = 0 To baSize - 1
+            If VarType(BAs(i)) <> VBObject Then throw Exps.InvalidArgumentTypeException("Only ByteArrays Accepted.")
+            If Not TypeOf BAs(i) Is ByteArray Then throw Exps.InvalidArgumentTypeException("Only ByteArrays Accepted.")
+            Set RetVal(i) = BAs(i)
+        Next
+    End If
+    ByteArrays = RetVal
+End Function
+Public Function CloneStringArrayToVariantArray(strs() As String) As Variant()
+    Dim strsCount As Long, retVars() As Variant
+    strsCount = ArraySize(strs)
+    If strsCount > 0 Then
+        'ReDim retVars(StrsCount - 1)
+        retVars = Arrays.CreateSafeVector(atVariantArray, strsCount)
+        Dim i As Long, xCounter As Long
+        For i = LBound(strs) To UBound(strs)
+            retVars(xCounter) = CStr(strs(i))
+            xCounter = xCounter + 1
+        Next
+    End If
+    CloneStringArrayToVariantArray = retVars
+End Function
+
+
+
+Public Function CLongArray(ByRef ArrayValue As Variant) As Long()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbLong) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CLongArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CIntegerArray(ByRef ArrayValue As Variant) As Integer()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbInteger) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CIntegerArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CByteArray(ByRef ArrayValue As Variant) As Byte()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbByte) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CByteArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CDecimalArray(ByRef ArrayValue As Variant) As Variant()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbDecimal) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CDecimalArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CCurrencyArray(ByRef ArrayValue As Variant) As Currency()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbCurrency) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CCurrencyArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CSingleArray(ByRef ArrayValue As Variant) As Single()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbSingle) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CSingleArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CDoubleArray(ByRef ArrayValue As Variant) As Double()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbDouble) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CDoubleArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CDateArray(ByRef ArrayValue As Variant) As Date()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbDate) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CDateArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CBooleanArray(ByRef ArrayValue As Variant) As Boolean()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbBoolean) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CBooleanArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+Public Function CStringArray(ByRef ArrayValue As Variant) As String()
+    Dim VT As VariantTypes
+    VT = VariantType(ArrayValue)
+    If Not CanCastToXArray(VT, vbString) Then throw Exps.InvalidCastException
+    Dim IntPtr As Long, ArrayPtr As Long
+    IntPtr = API_VarPtrArray(CStringArray)
+    ArrayPtr = VariantAbsoluteDataPtr(ArrayValue)
+    MemPtr(IntPtr) = ArrayPtr
+    Call API_SafeArrayLock(ArrayPtr)
+End Function
+
+
+
+
+
+'Public Declare Function API_Dialogs_Browse Lib "libkernel0.MintAPI.dll" Alias "Dialogs_Browse" (ByVal hWndParent As Long, ByVal strTitle As String, ByVal strPath As String, ByVal CreateNewFolderButton As Boolean, ByVal Flags As Long, Error As Long) As String
+
+
+'=================================================================================================
+'=================================================================================================
+'=================================================================================================
+
+Private Const BIF_RETURNONLYFSDIRS   As Long = &H1          ' For finding a folder to start document searching
+Private Const BIF_DONTGOBELOWDOMAIN  As Long = &H2          ' For starting the Find Computer
+Private Const BIF_STATUSTEXT         As Long = &H4          ' Top of the dialog has 2 lines of text for BROWSEINFO.lpszTitle and one line if
+                                                           ' this flag is set.  Passing the message BFFM_SETSTATUSTEXTA to the hwnd can set the
+                                                           ' rest of the text.  This is not used with BIF_USENEWUI and BROWSEINFO.lpszTitle gets
+                                                           ' all three lines of text.
+Private Const BIF_RETURNFSANCESTORS  As Long = &H8
+Private Const BIF_EDITBOX            As Long = &H10         ' Add an editbox to the dialog
+Private Const BIF_VALIDATE           As Long = &H20         ' insist on valid result (or CANCEL)
+Private Const BIF_NEWDIALOGSTYLE     As Long = &H40         ' Use the new dialog layout with the ability to resize
+                                                           ' Caller needs to call OleInitialize() before using this API
+Private Const BIF_USENEWUI           As Long = (BIF_NEWDIALOGSTYLE Or BIF_EDITBOX)
+Private Const BIF_BROWSEINCLUDEURLS  As Long = &H80         ' Allow URLs to be displayed or entered. (Requires BIF_USENEWUI)
+Private Const BIF_UAHINT             As Long = &H100        ' Add a UA hint to the dialog, in place of the edit box. May not be combined with BIF_EDITBOX
+Private Const BIF_NONEWFOLDERBUTTON  As Long = &H200        ' Do not add the "New Folder" button to the dialog.  Only applicable with BIF_NEWDIALOGSTYLE.
+Private Const BIF_NOTRANSLATETARGETS As Long = &H400        ' don't traverse target as shortcut
+
+Private Const BIF_BROWSEFORCOMPUTER  As Long = &H1000       ' Browsing for Computers.
+Private Const BIF_BROWSEFORPRINTER   As Long = &H2000       ' Browsing for Printers
+Private Const BIF_BROWSEINCLUDEFILES As Long = &H4000       ' Browsing for Everything
+Private Const BIF_SHAREABLE          As Long = &H8000       ' sharable resources displayed (remote shares, requires BIF_USENEWUI)
+Private Const BIF_BROWSEFILEJUNCTIONS As Long = &H10000     ' allow folder junctions like zip files and libraries to be browsed
+
+
+
+
+'BIF_RETURNONLYFSDIRS or BIF_DONTGOBELOWDOMAIN or BIF_STATUSTEXT or BIF_RETURNFSANCESTORS or BIF_EDITBOX
+'BIF_VALIDATE or BIF_NEWDIALOGSTYLE or BIF_USENEWUI or BIF_BROWSEINCLUDEURLS or BIF_UAHINT or BIF_NONEWFOLDERBUTTON
+'BIF_NOTRANSLATETARGETS or BIF_BROWSEFORCOMPUTER or BIF_BROWSEFORPRINTER or BIF_BROWSEINCLUDEFILES or BIF_SHAREABLE
+'BIF_BROWSEFILEJUNCTIONS
+'Public Function MintAPI_Dialogs_Browse1(DialogType As API_ShellDialogType, hWndParent As Long, Description As String, InitialDirectory As String, CreateNewButton As Boolean, Flags As Long)
+'    Dim noNewButton As Boolean, needNewStyle As Boolean
+'    If (DialogType And ShellDialog_EditBox) = ShellDialog_EditBox Then
+'        Flags = Flags Or BIF_EDITBOX
+'    End If
+'    If (DialogType And ShellDialog_BrowseFileJunctions) = ShellDialog_BrowseFileJunctions Then
+'        Flags = Flags Or BIF_BROWSEFILEJUNCTIONS
+'    End If
+'    If (DialogType And ShellDialog_NewButton) <> ShellDialog_NewButton Then
+'        noNewButton = True
+'    End If
+'
+'    If CreateNewButton Then
+'        needNewStyle = True
+'    Else
+'        noNewButton = True
+'    End If
+'    If noNewButton Then
+'        Flags = Flags Or BIF_NONEWFOLDERBUTTON
+'    End If
+'    If needNewStyle Then
+'        Flags = Flags Or BIF_NEWDIALOGSTYLE
+'    End If
+'    Dim retval As String, errOut As Long
+'    retval = API_Dialogs_Browse(hWndParent, Description, InitialDirectory, CreateNewButton, Flags, errOut)
+'    If errOut <> 0 Then throw OperationCanceledException
+'
+'    MintAPI_Dialogs_Browse = retval
+'End Function

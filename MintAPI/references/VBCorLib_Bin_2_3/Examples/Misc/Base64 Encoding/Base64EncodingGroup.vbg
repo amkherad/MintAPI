@@ -1,0 +1,3 @@
+VBGROUP 5.0
+StartupProject=Base64Encoding.vbp
+Project=..\..\..\VBCorLib.vbp

@@ -1,0 +1,10 @@
+ATL based library written with vb6 using windows API's.
+
+Including very strong methods such as concurrent execution in most of classes ,wide graphics engine ,
+And also data streaming and an internal actions called Texing!
+
+MintAPI allows you to do more works using less statements which can write in only single lines.
+
+MintAPI provides under LGPLv3 license ,you can use it freely.
+
+I recommend you to use it ,it's very nice and cute.

@@ -1,0 +1,44 @@
+﻿fclass(object)
+-------------
+Name								String
+constData							ByteArray
+toString							String
+toByteArray							ByteArray
+getclass							Object
+output								void
+input								void
+setStreamState						void
+getStreamState						bool
+availableData						bool
+availableDataLength					long
+setExceptionState					void
+haveCallbacks						bool
+appendCallback						void
+removeCallback						bool
+clearCallbacks						void
+Thread								Thread
+setID								void
+getID								String
+registerObject						void
+WriteToFile							void
+WriteToStream						void
+ReadFromFile						Object
+ReadFromStream						Object
+clone								Object
+clonable							bool
+supporttexing						bool
+tex									Object 'it returns internal object which keeps object texed values.
+objdefault							Object
+default								Object
+
+callback:fromMethod,fromClass,fromEvent(Method,classmethodstring/classitself,class/eventname)
+---------------------------------------------------------------------------------------------
+getclass							fclass
+
+
+
+IClassExceptionManager<>
+------------------------
+getExceptionState					bool
+setExceptionState					void
+setExceptionsStates					void

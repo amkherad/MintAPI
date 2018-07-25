@@ -1,0 +1,23 @@
+﻿@zaX:preLoad{
+	binaries={"bin:zaXS.zax","bin:zaXS.dll"};
+	class="default";
+	class.zax="default";
+}
+@zaX:Load{
+	stream << "<!doctype xmlns=\"http://w3c.org/\">";
+}
+<html>
+<head>
+	<title>zaX-Sample</title>
+	<@zaX checkSystem="true" checkBrowser="true" targetBrowsers="IE>6, chrome, mozilla, safari, opera"/>
+</head>
+<body>
+	@zaX[AJAX]:document.Load{ // this mean create an ajax area and when page.load event occured execute this section.
+		int32 i = 0;
+		stream.messagebox << "Hello EveryOne...";
+		stream.inputbox("") >> i; //this open an inputbox and get text.
+		stream << "Please Enter A Number...";
+		stream >> i; //means every button that clicked.
+	}
+</body>
+</html>

@@ -1,0 +1,14 @@
+function @zak:preLoad{
+    [application.addRefrence("lib-ext.dll"), "default" ] //default is classname
+}
+
+@zak:stream::out(...) << {string{
+    <html>
+        <head>
+            <title>myProxy</title>
+        </head>
+        <body>
+            
+        </body>
+    </html>
+}};

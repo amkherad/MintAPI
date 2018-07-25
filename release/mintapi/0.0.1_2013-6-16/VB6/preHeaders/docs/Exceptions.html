@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta name="keywords" content="base exception exceptions baseexceptions baseexception except exceptioning throw notimplemented"/>
+<link rel="stylesheet" type="text/css" href="modules/master.css"/>
+<script type="text/javascript" language="javascript" src="modules/master.js"></script>
+<title>@t Framework - Exceptions</title>
+</head>
+<body>
+<div id="header">
+	<iframe src="modules/header.html" class="header" border="0" style="width:100%;height:70px;border:none;"></iframe>
+</div>
+<div id="header_caption">
+<h1>Exceptions</h1>
+<h2>Base exceptioning methods.</h2>
+</div>
+<div id="centralpane">
+<div id="contentpane">
+<p>
+	<h3>@t Exceptions</h3>
+</p>
+	<br />
+	<br />
+	<ul class="clsmethods">
+		<li><span class="syntax">void<span> Initialize()</li>
+		<li><span class="syntax">void<span> Dispose(<span class="syntax">Optional ByVal<span> Force <span class="syntax">As Boolean<span> = <span class="syntax">False<span>)</li>
+		<li><span class="tagmet">Kernel </span><span class="proptext">Property </span><span class="attrtext">[Read-Only] </span><span class="syntax">INT32<span> InstanceID</li>
+		<li><span class="syntax">void<span> throw0(<span class="syntax">ByRef<span> LibraryName <span class="syntax">As LPSTR<span>, 
+			<span class="syntax">ByRef<span> ModuleName <span class="syntax">As LPSTR<span>, <span class="syntax">ByVal<span> SourceMethodName <span class="syntax">As LPSTR<span>, 
+			<span class="syntax">ByVal<span> ExceptionDescription <span class="syntax">As LPSTR<span>, <span class="syntax">Optional ByVal<span> arguments 
+			<span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional ByVal<span> ErrorNumber <span class="syntax">As Long<span>, 
+			<span class="syntax">Optional ByVal<span> ExceptionType <span class="syntax">As Long<span>, <span class="syntax">Optional<span> HelpFile, <span class="syntax">Optional<span> HelpContext)</li>
+		
+		<li class="bgimpmet"><span class="tagmet">Kernel </span><span class="syntax">void<span> throw(Exception <span class="syntax">As Exception<span>)</li>
+		
+		<li><span class="syntax">void<span> throwT(Description <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> throwN()</li>
+		<li><span class="syntax">LPSTR<span> Location(Library <span class="syntax">As LPSTR<span>, Module <span class="syntax">As LPSTR<span>, Func <span class="syntax">As LPSTR<span>, <span class="syntax">Optional<span> arguments <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">INT32<span> CountAllExceptions()</li>
+		<li><span class="syntax">void<span> ClearAllExceptions()</li>
+		<li><span class="syntax">void<span> SystemException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		
+		<li class="bgimpmet"><span class="syntax">void<span> Exception(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		
+		<li><span class="syntax">void<span> SystemCallFailureException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidCallException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> OsNotSupported(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ArgumentLengthOverloadException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> LPSTRLengthOverloadException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidArgumentTypeException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> TooManyArgumentsException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> NotEnoughArgumentsException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidArrayLBoundException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidArrayUBoundException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidVarTypeException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidArgumentValueException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> OperationCanceledException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> AccessDeniedException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> UnknownValueException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ZeroArgumentException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> NegativeArgumentException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ZeroNegativeArgumentException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ValueIsTooHightException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ValueIsTooLowException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> PathNotFoundException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidPathException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidFileException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> FileNotFoundException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> FileExistsException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> OutOfRangeException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ClassNotInitializedException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> NotImplementedException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ItemNotExistsException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ItemExistsException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ListIsEmptyException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> BufferIsEmptyException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> DisposedException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> OpenFileException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> CloseFileException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> ReadFileException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> WriteFileException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> TargetNotReadyException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li><span class="syntax">void<span> InvalidStatusException(<span class="syntax">Optional<span> Description <span class="syntax">As LPSTR<span> = "", <span class="syntax">Optional<span> Location <span class="syntax">As LPSTR<span> = "")</li>
+		<li class="clsmethods_last">
+			Last Update 10/23/2012
+		</li>
+	</ul>
+	<br />
+	<br />
+<p>
+	Description: <br />
+		Exception library is provided to throw exception same as .net framework to ease the error managing.<br /><br />
+		This provides a syntax known as <span class="syntax">throw<span> to raise your exception ,
+		an exception can also be operating system exception and when raise your application will be terminated
+		by the operating system.<br /><br />
+		This allows you to throw an error without write any error string or description about your error.<br />
+		
+		All you need for throwing an error is to write following code in your statements:<br /><br />
+		<span class="syntax">throw<span> [Exception Type]<br />
+		<span class="syntax">throw<span> NotImplementedException<br />
+		<span class="syntax">throw<span> SystemCallFailureException<br />
+		&nbsp;&nbsp;.<br />&nbsp;&nbsp;.<br />&nbsp;&nbsp;.
+		<br /><br />
+		
+		Also can specify the exception information using <span class="syntax">throw0<span> syntax:<br /><br />
+		<span class="syntax">throw0<span>("My Application/Dll/Libray/...","modMain/frmMain/...","ArcSin/Main/...","Some Description About Exception","Arguments x As Int32",[Error Number],__,__,__)
+		<br /><br />
+		<span class="syntax">throwT<span> method throw an exception with two parameters Description of the exception and Location ,the location of the exception occurance.<br />
+		<span class="syntax">throwT<span>("Item does not exists.","mydll.myclass.mymethod()")
+		<br /><br />
+		<span class="syntax">throwN<span> function provided to throw an exception without any information about it ,this used for automation actions.
+		<br /><br />
+		Location() creates a record to store passed arguments to it and return it as string to use in exception creators.
+		<br /><br />
+		Exception Creators<br />
+		------------------<br />
+		-SystemException() will create an exception that will throw an error to the operating system kernel ,operating system then terminates the application.<br />
+		-Exception() default exception creator method.<br />
+		-############Exception() creates specified exception to be throwed.<br />
+		ex: NotImplementedException() | usage: throw NotImplementedException
+		<br /><br />
+		CountAllExceptions() returns all throwed exceptions including system exceptions.<br />
+		ClearAllExceptions() clear all counted exceptions.<br />
+		
+		<br /><br />
+		<span class="highlightdescription">@t Exceptions module is base module and dont use any module.</span>
+</p>
+</div>
+</div>
+<div id="footer_controls">
+	
+</div>
+<div id="footer">
+	Copyright (c) by Ali Mousavi Kherad | @t framework
+	<a href="mailto:alimousavikherad@gmail.com" id="footer_email">alimousavikherad@gmail.com</a>
+</div>
+</body>
+</html>

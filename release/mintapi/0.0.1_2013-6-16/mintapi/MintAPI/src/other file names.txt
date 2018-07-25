@@ -1,0 +1,9 @@
+d/CONSOLE
+d/STDOUT
+d/STDIN
+d/SOCKET(targetPort[,targetIP])
+d/mDATABASE(mintapi database path)
+d/STREAM(stream)
+d/COM
+d/LPT
+d/NULL

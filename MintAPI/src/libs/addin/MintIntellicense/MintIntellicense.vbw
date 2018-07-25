@@ -1,0 +1,15 @@
+Connect = 99, 99, 690, 529, C, 80, 16, 844, 683, C
+mint_constants = 0, 0, 591, 430, C
+frmSettings = 22, 29, 613, 459, C, 7, 6, 733, 609, C
+frmProjectSettings = 0, 0, 590, 430, C, 66, 87, 657, 517, C
+GlobalVariables = 154, 203, 745, 633, C
+mint_main = 88, 116, 678, 546, C
+VBInstanceWrapper = 0, 0, 590, 430, C
+frmWelcome = 44, 58, 634, 488, C, 0, 0, 590, 430, C
+MenuItem = 44, 58, 634, 488, C
+MintIntellicenseAPI = 110, 145, 700, 575, 
+MenuItemChildren = 22, 29, 612, 459, 
+MenuItemEventArgs = 44, 58, 634, 488, 
+frmAbout = 0, 0, 0, 0, C, 44, 58, 643, 488, C
+frmGlobalization = 66, 87, 665, 517, C, 44, 58, 643, 488, C
+frmWidgetDesigner = 132, 174, 731, 604, C, 0, 0, 599, 430, C

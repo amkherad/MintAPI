@@ -1,0 +1,33 @@
+/* * * * * * * * * * * * * * * * * * * *
+ *
+ * MintAPICrossModuleLinkage
+ *  by Ali Mousavi Kherad
+ *  alimousavikherad@gmail.com
+ * MintAPICrossModule.odl
+ *
+ * * * * * * * * * * * * * * * * * * * */
+
+ 
+[
+    helpstring("# MintAPI Cross Module Linkage Type Library."),
+    uuid(00000000-7700-0045-7FFF-7ACDC6661234),
+	lcid(0x00000000),
+	version(0.1)
+]
+library MintCML {
+    importlib("stdole2.tlb");
+    importlib("msvbvm60.dll");
+    importlib("../../bin/mintcore.tlb");
+    
+#include "../_include.h"
+
+#include "generictypes.h"
+
+#include "enums.h"
+
+#include "structures.h"
+
+#include "interfaces.h"
+
+#include "helpers.h"
+}

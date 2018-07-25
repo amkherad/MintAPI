@@ -1,0 +1,8 @@
+- 0.0.0700  Asyncronous Programming Model (APM)-liked structure added to asyncronous classes and methods.
+- 0.0.0672  Asyncronous methods (like .net) take place in all IO and more classes.
+- 0.0.0671  Establishing threading foundation, and asyncronous execution.
+- 0.0.0651  Create a strong streaming foundation for framework.
+- 0.0.0651  Begin to layering MintAPI and remove secondary technologies from core library like UI.
+- 0.0.0620  Establishing some of .net framework methods like IObject class and so more...
+- 0.0.0013  Creating a powerfull exception managing.
+- 0.0.0009  Create a class streaming foundation like POSIX library for all classes in framework.

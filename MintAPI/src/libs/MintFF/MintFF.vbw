@@ -1,0 +1,8 @@
+modMain = 66, 66, 661, 506, C
+IFileFormat = 88, 88, 683, 528, C
+PDFFile = 110, 110, 705, 550, C
+PDFFileStatic = 132, 132, 727, 572, C
+CSVFile = 154, 154, 749, 594, C
+CSVStatic = 176, 176, 771, 616, C
+IFileHeader = 0, 0, 595, 440, C
+IHeaderField = 66, 66, 661, 506, C

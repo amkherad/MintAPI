@@ -1,0 +1,3 @@
+VBGROUP 5.0
+Project=src\MintAPI.vbp
+StartupProject=src\tester\tester.vbp

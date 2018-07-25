@@ -1,0 +1,13 @@
+Client = 100, 100, 958, 523, C
+FileManager = 0, 0, 858, 423, C
+frmbuff = 125, 125, 983, 548, C, 14, 7, 1058, 561, C
+Delete = 75, 75, 934, 498, Z
+Rename = 100, 100, 959, 523, C
+Move = 125, 125, 984, 548, C
+Compress = 150, 150, 1009, 573, C
+Execute = 175, 175, 1034, 598, C
+FileName = 0, 0, 859, 423, C
+FileSize = 50, 50, 909, 473, C
+FileSelector = 78, 80, 937, 503, C
+masterProps = 168, 103, 1027, 539, C
+modMain = 200, 200, 1059, 623, C

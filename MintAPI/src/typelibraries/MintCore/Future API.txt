@@ -1,0 +1,18 @@
+Declare Sub CoCreateFreeThreadedMarshaler lib "ole32" (ByVal punkOuter As Long, ByVal ppunkMarshal As Long)
+Declare Sub CoCancelCall lib "ole32" (ByVal dwThreadId As Long, ByVal ulTimeout As Long)
+Declare Sub CoCopyProxy lib "ole32" (ByVal pProxy As Long, ByVal ppCopy As Long)
+Declare Sub CoGetCancelObject lib "ole32" (ByVal dwThreadId As Long, ByVal iid As Long, ppUnk As Any)
+Declare Sub CoMarshalHresult lib "ole32" (ByRef pstm As Long, ByVal hresult As Long)
+Declare Sub CoMarshalInterface lib "ole32" (ByRef pStm As Long, ByVal riid As Long, ByVal pUnk As Long, ByVal dwDestContext As Long, pvDestContext As Any, ByVal mshlflags As Long)
+Declare Sub CoMarshalInterThreadInterfaceInStream lib "ole32" (ByVal riid As Long, ByVal pUnk As Long, ByRef ppStm As Long)
+Declare Sub FreeLibraryAndExitThread Lib "kernel32" Alias "FreeLibraryAndExitThread" (ByVal hLibModule As Long, ByVal dwExitCode As Long)
+Declare Function AttachThreadInput Lib "user32" Alias "AttachThreadInput" (ByVal idAttach As Long, ByVal idAttachTo As Long, ByVal fAttach As Long) As Long
+Declare Function ContinueDebugEvent Lib "kernel32" Alias "ContinueDebugEvent" (ByVal dwProcessId As Long, ByVal dwThreadId As Long, ByVal dwContinueStatus As Long) As Long
+Declare Function ConvertThreadToFiber lib "kernel32" (lpParameter As Any) As Long
+Declare Function CreateIoCompletionPort Lib "kernel32" Alias "CreateIoCompletionPort" (ByVal FileHandle As Long, ByVal ExistingCompletionPort As Long, ByVal CompletionKey As Long, ByVal NumberOfConcurrentThreads As Long) As Long
+Declare Function CreateRemoteThread Lib "kernel32" Alias "CreateRemoteThread" (ByVal hProcess As Long, lpThreadAttributes As SECURITY_ATTRIBUTES, ByVal dwStackSize As Long, lpStartAddress As Long, lpParameter As Any, ByVal dwCreationFlags As Long, lpThreadId As Long) As Long
+Declare Function DisableThreadLibraryCalls Lib "kernel32" Alias "DisableThreadLibraryCalls" (ByVal hLibModule As Long) As Long
+Declare Function EnumThreadWindows Lib "user32" (ByVal dwThreadID As Long, ByVal lpfn As Long, ByVal lParam As Long) As Long
+Declare Function GetGUIThreadInfo lib "user32" (ByVal idThread As Long, ByRef pgui As PGUITHREADINFO) As Long
+Declare Function GetHandleInformation Lib "kernel32" Alias "GetHandleInformation" (ByVal hObject As Long, lpdwFlags As Long) As Long
+Declare Function SwitchToThread lib "kernel32" () As Long

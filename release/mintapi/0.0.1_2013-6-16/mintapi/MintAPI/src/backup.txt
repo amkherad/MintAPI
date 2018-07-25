@@ -1,0 +1,67 @@
+
+'Public Declare Function API_Dialogs_Browse Lib "libkernel0.MintAPI.dll" Alias "Dialogs_Browse" (ByVal hWndParent As Long, ByVal strTitle As String, ByVal strPath As String, ByVal CreateNewFolderButton As Boolean, ByVal Flags As Long, Error As Long) As String
+
+
+'=================================================================================================
+'=================================================================================================
+'=================================================================================================
+
+Private Const BIF_RETURNONLYFSDIRS   As Long = &H1          ' For finding a folder to start document searching
+Private Const BIF_DONTGOBELOWDOMAIN  As Long = &H2          ' For starting the Find Computer
+Private Const BIF_STATUSTEXT         As Long = &H4          ' Top of the dialog has 2 lines of text for BROWSEINFO.lpszTitle and one line if
+                                                           ' this flag is set.  Passing the message BFFM_SETSTATUSTEXTA to the hwnd can set the
+                                                           ' rest of the text.  This is not used with BIF_USENEWUI and BROWSEINFO.lpszTitle gets
+                                                           ' all three lines of text.
+Private Const BIF_RETURNFSANCESTORS  As Long = &H8
+Private Const BIF_EDITBOX            As Long = &H10         ' Add an editbox to the dialog
+Private Const BIF_VALIDATE           As Long = &H20         ' insist on valid result (or CANCEL)
+Private Const BIF_NEWDIALOGSTYLE     As Long = &H40         ' Use the new dialog layout with the ability to resize
+                                                           ' Caller needs to call OleInitialize() before using this API
+Private Const BIF_USENEWUI           As Long = (BIF_NEWDIALOGSTYLE Or BIF_EDITBOX)
+Private Const BIF_BROWSEINCLUDEURLS  As Long = &H80         ' Allow URLs to be displayed or entered. (Requires BIF_USENEWUI)
+Private Const BIF_UAHINT             As Long = &H100        ' Add a UA hint to the dialog, in place of the edit box. May not be combined with BIF_EDITBOX
+Private Const BIF_NONEWFOLDERBUTTON  As Long = &H200        ' Do not add the "New Folder" button to the dialog.  Only applicable with BIF_NEWDIALOGSTYLE.
+Private Const BIF_NOTRANSLATETARGETS As Long = &H400        ' don't traverse target as shortcut
+
+Private Const BIF_BROWSEFORCOMPUTER  As Long = &H1000       ' Browsing for Computers.
+Private Const BIF_BROWSEFORPRINTER   As Long = &H2000       ' Browsing for Printers
+Private Const BIF_BROWSEINCLUDEFILES As Long = &H4000       ' Browsing for Everything
+Private Const BIF_SHAREABLE          As Long = &H8000       ' sharable resources displayed (remote shares, requires BIF_USENEWUI)
+Private Const BIF_BROWSEFILEJUNCTIONS As Long = &H10000     ' allow folder junctions like zip files and libraries to be browsed
+
+
+
+
+'BIF_RETURNONLYFSDIRS or BIF_DONTGOBELOWDOMAIN or BIF_STATUSTEXT or BIF_RETURNFSANCESTORS or BIF_EDITBOX
+'BIF_VALIDATE or BIF_NEWDIALOGSTYLE or BIF_USENEWUI or BIF_BROWSEINCLUDEURLS or BIF_UAHINT or BIF_NONEWFOLDERBUTTON
+'BIF_NOTRANSLATETARGETS or BIF_BROWSEFORCOMPUTER or BIF_BROWSEFORPRINTER or BIF_BROWSEINCLUDEFILES or BIF_SHAREABLE
+'BIF_BROWSEFILEJUNCTIONS
+'Public Function MintAPI_Dialogs_Browse1(DialogType As API_ShellDialogType, hWndParent As Long, Description As String, InitialDirectory As String, CreateNewButton As Boolean, Flags As Long)
+'    Dim noNewButton As Boolean, needNewStyle As Boolean
+'    If (DialogType And ShellDialog_EditBox) = ShellDialog_EditBox Then
+'        Flags = Flags Or BIF_EDITBOX
+'    End If
+'    If (DialogType And ShellDialog_BrowseFileJunctions) = ShellDialog_BrowseFileJunctions Then
+'        Flags = Flags Or BIF_BROWSEFILEJUNCTIONS
+'    End If
+'    If (DialogType And ShellDialog_NewButton) <> ShellDialog_NewButton Then
+'        noNewButton = True
+'    End If
+'
+'    If CreateNewButton Then
+'        needNewStyle = True
+'    Else
+'        noNewButton = True
+'    End If
+'    If noNewButton Then
+'        Flags = Flags Or BIF_NONEWFOLDERBUTTON
+'    End If
+'    If needNewStyle Then
+'        Flags = Flags Or BIF_NEWDIALOGSTYLE
+'    End If
+'    Dim retval As String, errOut As Long
+'    retval = API_Dialogs_Browse(hWndParent, Description, InitialDirectory, CreateNewButton, Flags, errOut)
+'    If errOut <> 0 Then throw OperationCanceledException
+'
+'    MintAPI_Dialogs_Browse = retval
+'End Function

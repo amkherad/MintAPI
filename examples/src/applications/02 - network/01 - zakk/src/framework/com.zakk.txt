@@ -1,0 +1,44 @@
+
+namespace com.zakk
+{
+    public abstract class object
+    {
+        public virtual string ToString();
+	public virtual object Parent();
+	
+	public sealed variant Call(...);
+	
+	public sealed MetaObject MetaObject { get; }
+	public sealed Alias Alias { get; }
+	public sealed Type Type { get; }
+	public sealed Class Class { get; }
+	public sealed Scope Scope { get; }
+	
+	public sealed object CreateInstance();
+	public sealed void Thread();
+	public sealed void MoveToThread();
+	public sealed void DeleteInstance();
+	public sealed that.Type Refrence(); //clone refrence to the instance.
+	public sealed int Refrences(); //the number of refrences to the instance.
+	public sealed that.Type WeakRefrence(); //create a weak refrence to instance, the instance still can be garbage collected.
+	public sealed bool Cloneable();
+	public sealed bool Serializable();
+	public abstract classOutput();
+	public abstract classInput();
+	public abstract that.Type Clone();
+	public abstract Serialized<that.Type> Serialize();
+    }
+    class string extends object
+    {
+        public int length { get; }
+        public int find();
+        public string replace();
+        public int indexof();
+        public int lastindexof();
+        public string copy();
+    }
+    class bytearray extends object
+    {
+        
+    }
+}

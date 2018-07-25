@@ -1,0 +1,5 @@
+body { margin: 0; font-size: 2em; background-color: white; }
+h1 { text-align: center; color: red; }
+h1 + h1 { color: green; }
+h1:last-child { color: blue; }
+#quit { background-color: gray; color: white; font-weight: bold; display: block; text-align: right; }

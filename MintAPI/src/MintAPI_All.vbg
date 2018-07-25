@@ -1,0 +1,6 @@
+VBGROUP 5.0
+StartupProject=MintAPI\MintAPI.vbp
+Project=libs\MintRuntime\MintRuntime.vbp
+Project=libs\MintShell\MintShell.vbp
+Project=libs\MintWrapper\MintWrapper.vbp
+Project=libs\MintQuery\MintQuery.vbp

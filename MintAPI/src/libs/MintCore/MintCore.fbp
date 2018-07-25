@@ -1,0 +1,35 @@
+[Project]
+Version=3
+Description=$ MintAPI core library.
+Api=fb (FreeBASIC),win (Windows)
+Grouping=2
+AddMainFiles=1
+AddModuleFiles=1
+ResExport=
+CompileIfNewer=0
+IncVersion=0
+RunCmd=0
+[Make]
+Current=1
+1=Windows dll,fbc -s gui -dll -export
+Recompile=2
+Module=Module Build,fbc -c
+Output=..\..\..\bin\mintcore.dll
+Run=
+Delete=
+[TabOrder]
+TabOrder=1,1001
+[File]
+1=src\MintCore.bas
+2=MintCore.rc
+3=src\MintCore.bi
+1001=src\API.bas
+[BreakPoint]
+1=
+3=
+1001=
+[FileInfo]
+1=0,11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1001=0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

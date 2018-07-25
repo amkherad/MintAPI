@@ -1,0 +1,9 @@
+modMain = 22, 29, 746, 452, C
+tApplication = 44, 58, 636, 481, 
+GUIAPI = 66, 87, 658, 510, 
+Window = 110, 145, 702, 568, 
+WindowStatic = 132, 174, 724, 597, 
+Statics = 154, 203, 746, 626, 
+IGUIElement = 0, 0, 592, 423, C
+GUIElementChildren = 22, 29, 622, 459, C
+mint_apideclarations = 88, 116, 688, 546, Z

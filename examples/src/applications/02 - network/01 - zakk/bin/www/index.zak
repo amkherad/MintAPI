@@ -1,0 +1,5 @@
+@{
+response.HtmlCompression = true;
+response.buffermode=enum.stream;
+response.initialize(new siteframe());
+}

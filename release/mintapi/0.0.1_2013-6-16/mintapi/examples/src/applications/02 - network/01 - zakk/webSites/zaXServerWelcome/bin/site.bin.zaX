@@ -1,0 +1,15 @@
+conf{
+	regpath="data='bin:data';images='bin:images'"
+	binary="bin:zaXS.dll"
+	type="ActiveX"
+	binlang="VB6"
+	namespace="zaX_Sample"
+	application="zaX_Sample.App"
+	appicon="images:app.ico"
+	databaseconnectionstring="database.connectionstring:type='zaXdb';path='data:database.db';uID='';pass=''"
+	defaultpage="~/default.zaX"
+}
+pages{
+	"/default:"
+	
+}

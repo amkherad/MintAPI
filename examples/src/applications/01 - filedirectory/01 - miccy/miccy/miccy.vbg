@@ -1,0 +1,3 @@
+VBGROUP 5.0
+Project=miccy\miccyUltimateTools.vbp
+StartupProject=miccy\exec\miccy.vbp

@@ -1,0 +1,12 @@
+istr
+StringBuilder
+TextReader
+TextWriter
+BlockStream
+BlockReader
+BlockWriter
+Regex
+RegexStatic
+RegexConditioner
+RegexMask
+StringQueryable

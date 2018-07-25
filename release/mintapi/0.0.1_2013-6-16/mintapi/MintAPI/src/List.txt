@@ -1,0 +1,97 @@
+Option Explicit
+
+Private mCol As Collection
+
+Private Sub Class_Initialize()
+    'creates the collection when this class is created
+    Set mCol = New Collection
+End Sub
+Private Sub Class_Terminate()
+    'destroys collection when this class is terminated
+    Set mCol = Nothing
+End Sub
+
+Public Function Add(Object As Object, Optional Key As String) As Long
+    Add = mCol.Count
+    If Len(Key) = 0 Then
+        mCol.Add Object
+    Else
+        mCol.Add Object, Key
+    End If
+End Function
+
+Public Property Get Item(vntIndexKey As Variant) As Variant
+  If VarType(vntIndexKey) <> vbString Then
+    vntIndexKey = CLng(vntIndexKey) - 1
+  End If
+  If VarType(mCol(vntIndexKey)) = VBObject Then
+    Set Item = mCol(vntIndexKey)
+  Else
+        Item = mCol(vntIndexKey)
+  End If
+End Property
+Public Property Let Item(vntIndexKey As Variant, value)
+  If VarType(vntIndexKey) <> vbString Then
+    vntIndexKey = CLng(vntIndexKey) - 1
+  End If
+  If VarType(mCol(vntIndexKey)) = VBObject Then
+    Set mCol(vntIndexKey) = value
+  Else
+        mCol(vntIndexKey) = value
+  End If
+End Property
+Public Property Set Item(vntIndexKey As Variant, value)
+  If VarType(vntIndexKey) <> vbString Then
+    vntIndexKey = CLng(vntIndexKey) - 1
+  End If
+  Set mCol(vntIndexKey) = value
+End Property
+
+
+Public Sub Clear()
+    Set mCol = Nothing
+    Set mCol = New Collection
+End Sub
+Public Property Get Count() As Long
+    Count = mCol.Count
+End Property
+Public Sub Remove(vntIndexKey As Variant)
+    mCol.Remove vntIndexKey
+End Sub
+Public Property Get NewEnum() As IUnknown
+    Set NewEnum = mCol.[_NewEnum]
+End Property
+
+Public Sub DoAction(ByVal Action As Action, StartIndex As Long, Optional HowMany As Long)
+    
+End Sub
+
+Public Sub BubbleSort()
+    
+End Sub
+Public Sub QuickSort()
+    
+End Sub
+Public Sub BinarySort()
+    
+End Sub
+Public Sub SelectionSort()
+    
+End Sub
+
+Public Sub Swap()
+    
+End Sub
+Public Function Pop()
+    
+End Function
+Public Sub Push()
+    
+End Sub
+
+Public Function RemoveAt()
+    
+End Function
+Public Sub Insert()
+    
+End Sub
